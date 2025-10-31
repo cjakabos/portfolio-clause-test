@@ -1,0 +1,349 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.3rem;
+    --dialog-bg: #ffffff;
+    --dialog-text: #000000;
+  }
+
+  .dark {
+    --background: 222.2 100% 0%;
+    --foreground: 210 40% 98%;
+    --primary-color: 0 0% 100%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --dialog-bg: #121212;
+    --dialog-text: #ffffff;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: hsl(var(--background));
+  }
+}
+
+.MuiPaper-root.MuiDialog-paper {
+  background-color: var(--dialog-bg);
+  color: var(--dialog-text);
+}
+
+.dialog {
+  background-color: var(--dialog-bg);
+  color: var(--dialog-text);
+  &::placeholder{
+    opacity: 1 !important;
+  }
+}
+
+.centered {
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.section {
+  flex: 1 1 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+.section2 {
+  flex: 1 1 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+.section h1 {
+  margin-top: 0;
+}
+
+.section2 h1 {
+  margin-top: 0;
+}
+
+.layoutLinksFormat {
+    @apply order-1 flex lg:order-none w-[100px]
+}
+
+.layoutLinksButtonFormat {
+    @apply ml-10 hidden opacity-70 hover:opacity-100 lg:block cursor-pointer transition-opacity duration-200 text-black dark:text-white
+}
+
+.layoutLinksButtonOnlyFormat {
+    @apply ml-4 self-center hover:text-teal-500 lg:hidden cursor-pointer transition-colors duration-200
+}
+
+input[type="text"], input[type="number"], input[type="phone"], select, input[type="submit"], input[type="password"], button {
+  width: 300px;
+  padding: 8px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.menuButton {
+  width: 100px;
+  border: 2px solid #4CAF50;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.styleButton {
+  width: 10px;
+  border: 2px solid #4CAF50;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.submitbutton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.ml-update-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.clearbutton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.popup-box {
+  background-color: white;
+  position: fixed;
+  top: 100px;
+  bottom: 100px;
+  border: 4px solid;
+  border-radius: 6px;
+  min-height: 200px;
+  overflow: auto
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.chatButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: space-between;
+  margin-top: 17px;
+  width: 60px;
+}
+
+
+.Chat {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 800px;
+}
+
+.Chat-header {
+  background-color: #262626;
+  overflow: visible;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.messages-list {
+  padding: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Messages-message.currentUser {
+  /*justify-content: flex-end;*/
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.Message-content {
+  display: inline-block;
+}
+
+.currentUser>.Message-content {
+  align-items: flex-end;
+}
+
+.Messages-message>.avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px -10px;
+}
+
+.Message-content>.username {
+  display: block;
+  color: gray;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+.Message-content>.text {
+  padding: 10px;
+  max-width: 400px;
+  margin: 0;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: rgb(90, 90, 90);
+  display: inline-block;
+}
+
+.currentUser>.Message-content .text {
+  background-color: rgb(143, 255, 152);
+}
+
+.otherUser>.Message-content .text {
+  background-color: rgba(78, 214, 255, 0.71);
+}
+
+.message-input {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 100px;
+  margin-bottom: 38px;
+}
+
+.inputField {
+  background-color: white;
+  padding: 0px;
+  font-size: 16px;
+  border-radius: 0px;
+  flex-grow: 1;
+  width: 500px;
+}
+
+.inputFieldContainer {
+  @apply flex justify-end
+}
+
+.inputFieldFormat {
+  @apply italic text-black bg-green-300 p-2 rounded-md mb-2
+}
+
+.outputFieldFormat {
+  @apply italic text-black bg-gray-300 p-2 rounded-md mb-2
+}
+
+.outputFieldThinkingFormat {
+  @apply italic text-black bg-blue-300 p-2 rounded-md mb-2
+}
+
+.Message-content>.timestamp {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+}
+
